@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(325deg, rgba(241,31,31,1) 21%, rgba(89,29,253,1) 53%, rgba(69,252,133,1) 80%);
+}
+
+.container{
+    width:90%;
+    max-width: 450px;
+}
+
+h1 {
+    color: white;
+    opacity: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.header{
+    position: relative;
+    background-color: rgb(117, 14, 253);
+    border-radius: 1rem;
+    border-bottom: 0.35rem solid rgb(21, 3, 45);
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+}
+
+#Pass-display{
+    width: 100%;
+    background-color: transparent;
+    padding: 1.15rem 1rem;
+    color: yellow;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    border:none;
+    pointer-events: none;
+}
+
+#Pass-display::placeholder{
+    position:absolute;
+    top: 50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height:30px;
+    color:yellow;
+    opacity: 0.65;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+}
+
+.header button {
+    position:absolute;
+    top:50%;
+    right:1.5rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.input-container{
+    width:100%;
+    background-color: rgb(117, 14, 253);
+    border-radius: 1rem;
+    padding: 2rem;
+    border-bottom: 0.35rem solid rgb(21, 3, 45);
+}
+
+.pass-length {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pass-length p:nth-child(1) {
+    color:white;
+    font-size: 1.5rem;
+}
+.pass-length p:nth-child(2){
+    color:yellow;
+    font-size: 1.5rem;
+}
+
+.strength-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.strength-container p{
+    color:white;
+    font-size: 1.5rem;
+}
+
+.indicator {
+    width:1.5rem;
+    height:1.5rem;
+    border-radius:50%;
+    background-color: white;
+}
+
+#generate {
+    width: 100%;
+    padding: 1rem 0;
+    background-color: red;
+    text-align: center;
+    border-radius: 0.75rem;
+    border-bottom: 0.35rem solid yellow;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: yellow;
+    font-weight: 600;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+
+.checkboxes input{
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid cyan;
+    cursor: pointer;
+    position: relative;
+    border-radius: 0.35rem;
+}
+
+
+.checkboxes input:checked{
+    background-color:rgb(251, 0, 255);
+}
+
+
+.checkboxes input:checked::before {
+    content: '✔';
+    position: absolute;
+    color:yellow;
+    font-size:1.05rem;
+    font-weight: 600;
+    left:50%;
+    top:-2.5px;
+    transform: translateX(-50%) ;
+}
+.checkboxes label {
+    color: white;
+    font-size: 1.25rem;
+    letter-spacing: 0.75px;
+}
+
+#slider{
+    appearance: none;
+    width:100%;
+    height: 0.75rem;
+    cursor: pointer;
+    background-color: rgb(82, 48, 128);
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    border:none;
+    outline:none;
+    z-index:-1;
+    background-image: linear-gradient(rgb(21, 3, 45),rgb(21, 3, 45));
+    background-repeat: no-repeat;
+}
+
+#slider::-webkit-slider-thumb {
+    position:relative;
+    z-index:1;
+    appearance: none;
+    height:2rem;
+    width:2rem;
+    border-radius: 50%;
+    background-color: yellow;
+    cursor:pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.50);
+    transition: all 100ms ease-in;
+}
+
+#slider:focus{
+    outline: 3px solid yellow;
+}
+
+#slider::-webkit-slider-thumb:hover{
+    outline: 2px solid yellow;
+    background-color: rgb(117, 14, 253);
+    box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.80);
+}
+
+.copyBtn{
+    background-color: transparent;
+    border:none;
+    outline:none;
+}
+
+.copymssg{
+    position: absolute;
+    background-color: rgb(21, 3, 45);
+    color: yellow;
+    font-size: 1.25rem;
+    top: -35px;
+    left: -25px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: bottom;
+    transition: all 250ms ease-in-out;
+}
+
+.copymssg.active{
+    opacity: 1;
+    transform: scale(1);
+}
